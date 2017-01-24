@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Custom</title>
+    <title><%= yield(:page_title) %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,302 @@
   </head>
 
   <body>
+
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Custom Sands Motorsports</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="<%= 'active' if current_page?(root_path) %>">
+                  <%= link_to 'Home', root_path  %>
+                </li>
+                <li class="<%= 'active' if current_page?(services_path) %>">
+                  <%= link_to 'Services', services_path %>
+                </li>
+                <li class="<%= 'active' if current_page?(accessories_path) %>">
+                  <%= link_to 'Accessories', accessories_path %>
+                </li>
+                <li class="<%= 'active' if current_page?(accessories_path) %>">
+                  <%= link_to 'Photo Gallery', albums_path %>
+                </li>
+                <li class="<%= 'active' if current_page?(contact_path) %>">
+                  <%= link_to 'Contact Us', contact_path %>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <% if admin_signed_in? %>
+                  <li><%= link_to 'Sign out', destroy_admin_session_path, method: :delete %></li>
+                  <li><%= link_to 'New Album', new_album_path %></li>
+                <% else %>
+                  <li><%= link_to 'Sign in', new_admin_session_path %></li>
+                <% end %>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+        <li data-target="#myCarousel" data-slide-to="9"></li>
+        <li data-target="#myCarousel" data-slide-to="10"></li>
+        <li data-target="#myCarousel" data-slide-to="11"></li>
+        <li data-target="#myCarousel" data-slide-to="12"></li>
+        <li data-target="#myCarousel" data-slide-to="13"></li>
+        <li data-target="#myCarousel" data-slide-to="14"></li>
+        <li data-target="#myCarousel" data-slide-to="15"></li>
+        <li data-target="#myCarousel" data-slide-to="16"></li>
+        <li data-target="#myCarousel" data-slide-to="17"></li>
+        <li data-target="#myCarousel" data-slide-to="18"></li>
+        <li data-target="#myCarousel" data-slide-to="19"></li>
+        <li data-target="#myCarousel" data-slide-to="20"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="/assets/redhondawhole.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="/assets/bnwhonda.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="/assets/CSM4Wheelers.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="fourth-slide" src="/assets/csmandbrock.jpg" alt="Fourth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <img class="fifth-slide" src="/assets/fronthonda.jpg" alt="Fifth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="sixth-slide" src="/assets/honda450.jpg" alt="Sixth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="seventh-slide" src="/assets/redhonda450.jpg" alt="Seventh slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="eight-slide" src="/assets/draghonda.jpg" alt="Eigth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="ninth-slide" src="/assets/brockbanshee3.jpg" alt="Ninth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="tenth-slide" src="/assets/draghondarear.jpg" alt="Tenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="eleventh-slide" src="/assets/bnwdraghonda.jpg" alt="Eleventh slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="twelfth-slide" src="/assets/draghondaside.jpg" alt="Twelfth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="thirteenth-slide" src="/assets/blueyfzside.jpg" alt="Thirteenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="fourtenth-slide" src="/assets/blueyfz450.jpg" alt="Fourtenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="fifthteenth-slide" src="/assets/blueyfzcovers.jpg" alt="Fifthteenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="Sixteenth-slide" src="/assets/blueyfzpipe.jpg" alt="Sixteenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="Seventeenth-slide" src="/assets/redbanshee.jpg" alt="Seventeenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="Eighteenth-slide" src="/assets/redbansheeclose.jpg" alt="Eighteenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="Nineteenth-slide" src="/assets/redbansheeside.jpg" alt="Nineteenth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="twentieth-slide" src="/assets/threeatvs.jpg" alt="Twentieth slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="twentyfirst-slide" src="/assets/orangehonda1.jpeg" alt="Twentyfirst slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+    <% if notice.present? %>
+      <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  <div class="container">
     <%= yield %>
+  </div>
+    <footer class="footer">
+           <div class="container">
+              <div class="row">
+                  <div class="col-sm-4">
+                      <ul class="nav nav-list">
+                        <li class="nav-header">Navigation</li>
+                        <li class="<%= 'active' if current_page?(root_path) %>">
+                          <%= link_to 'Home', root_path  %>
+                        </li>
+                        <li class="<%= 'active' if current_page?(services_path) %>">
+                          <%= link_to 'Services', services_path %>
+                        </li>
+                        <li class="<%= 'active' if current_page?(accessories_path) %>">
+                          <%= link_to 'Accessories', accessories_path %>
+                        </li>
+                        <li class="<%= 'active' if current_page?(accessories_path) %>">
+                          <%= link_to 'Photo Gallery', accessories_path %>
+                        </li>
+                        <li class="<%= 'active' if current_page?(contact_path) %>">
+                          <%= link_to 'Contact Us', contact_path %>
+                        </li>
+                      </ul>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <ul class="nav nav-list">
+                      <li class="nav-header">Contact</li>
+                      <% if admin_signed_in? %>
+                        <li><%= link_to 'Sign out', destroy_admin_session_path, method: :delete %></li>
+                      <% else %>
+                        <li><%= link_to 'Sign in', new_admin_session_path %></li>
+                        <li><%= link_to 'Sign up', new_admin_registration_path %></li>
+                      <% end %>
+                      <li><a href=""><i class="icon-envelope"></i> Email</a></li>
+                      <li class="phone-number">435-674-0808</li>
+                    </ul>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Social</li>
+                        <li><a href="https://www.facebook.com/pages/Custom-Sands-Motorsports/360187810663302"><i class="foundicon-facebook"></i> Facebook</a></li>
+                        <!-- <li><a href="#"><i class="foundicon-twitter"></i> Twitter</a></li> -->
+
+                     </ul>
+                  </div>
+              </div>
+              <p class="navbar-text navbar-right copy">Custom Sands Motorsports</p>
+          </div>
+      </footer>
+
   </body>
 </html>

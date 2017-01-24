@@ -1,0 +1,16 @@
+
+
+  <div class="row">
+    	<% @albums.each do |album| %>
+    		<div class="booyah-box col-xs-12 col-md-6">
+          <h1 class="text-center"><%=  album.name %></h1>
+          <%= link_to album_path(album) do %>
+    		    <%= image_tag album.picture,  :class => 'photo img-responsive center-block'%>
+          <% end %>
+    		  <br />
+          <div class="caption text-center">
+    		    <h3><%= album.description %></h3>
+          </div>
+        	 </div>
+    	<% end %>
+  </div>

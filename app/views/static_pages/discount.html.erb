@@ -1,0 +1,53 @@
+<% content_for :page_title, 'Discounts - Custom Sands Motorsports' %>
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-md-6 col-md-offset-3" id="section-to-print">
+            <div class="panel panel-default coupon">
+              <div class="panel-heading" id="head">
+                <div class="panel-title" id="title">
+                	<p>Custom Motor Sports</p>
+                    <span class="hidden-xs">Basic Service</span>
+                    <span class="visible-xs">Basic Service</span>
+                </div>
+              </div>
+              <div class="panel-body">
+                <img src="http://i.imgur.com/e07tg8R.png" class="coupon-img img-rounded">
+                <div class="col-md-9">
+                    <ul class="items">
+                        <li>One of our <a href="service.php"><b>Basic Services<b/></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <div class="offer">
+                        <span class="number">10</span>
+                        <span class="cents"><sup>%</sup></span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <p class="disclosure">Synthetic available at additional
+                    cost. Excludes hazardous waste fee, tax and shop supplies,
+                    where applicable. Offer not valid with previous charges or
+                    with any other offers or specials. Customer must offer at
+                    time of write-up. No cash value.</p>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <div class="coupon-code">
+
+                    <span class="print">
+                    	<button onclick="printFunction()" type="button" class="btn btn-primary">Print Coupon</button>
+                    </span>
+                </div>
+                </br>
+                <div class="exp">Expires: Dec 30, 2016</div>
+              </div>
+            </div>
+    	</div>
+    </div>
+</div>
+
+<script>
+function printFunction() {
+    window.print();
+}
+</script>
